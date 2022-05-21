@@ -1,31 +1,21 @@
 #include "opencv2/opencv.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
-using namespace cv;
+int main() {
+	cv::namedWindow("base", cv::WINDOW_AUTOSIZE);
+	cv::namedWindow("resize", cv::WINDOW_AUTOSIZE);
+	cv::namedWindow("crop", cv::WINDOW_AUTOSIZE);
 
-int main(int argc, char** argv) {
+	cv::Mat base = cv::imread("Images/bert en ernie.jpg", cv::IMREAD_COLOR);
+	cv::Mat resize = base.clone();
+	cv::Mat crop = base.clone();
 
-	//create a gui window:
-	namedWindow("Output",1);
+	resize.resize(200);
 
-	//initialize a 120X350 matrix of black pixels:
-	Mat output = Mat::zeros( 120, 350, CV_8UC3 );
+	imshow("base", base);
+	imshow("resize", resize);
+	imshow("crop", crop);
 
-	//write text on the matrix:
-	putText(output,
-			"Hello World :)",
-			Point(15,70),
-			FONT_HERSHEY_PLAIN,
-			3,
-			Scalar(0,255,0),
-			4);
-
-	//display the image:
-	imshow("Output", output);
-
-	//wait for the user to press any key:
-	waitKey(0);
-
+	cv::waitKey(0);
 	return 0;
-
 }
