@@ -1,9 +1,12 @@
 #include "opencv2/opencv.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
-int main() {
+using namespace cv;
 
-	cv::waitKey(0);
-	cv::destroyAllWindows();
+int main() {
+	namedWindow("template", WINDOW_AUTOSIZE);
+
+	waitKey(0);
+	destroyAllWindows();
 	return 0;
 }
