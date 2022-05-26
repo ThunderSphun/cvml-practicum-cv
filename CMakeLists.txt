@@ -11,5 +11,5 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(practicum main.cpp)
 
-set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs)
+set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs opencv_objdetect)
 target_link_libraries(practicum PRIVATE ${OpenCV_LIBS})
